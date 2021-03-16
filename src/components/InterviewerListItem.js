@@ -8,8 +8,6 @@ export default function InterviewerListItem(props){
     interviewerListClass: true,
     "interviewers__item" :props.item,
     "interviewers__item--selected" : props.selected
-
-
   })
  return ( 
  <li 
@@ -20,7 +18,7 @@ export default function InterviewerListItem(props){
     src= {props.avatar}
     alt={props.name}
   />
-  {props.name}
+  {props.selected ?  props.name : ""}
 </li>
  )
 }
