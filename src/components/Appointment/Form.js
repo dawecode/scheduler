@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Button from "components/Button"
 import InterviewerList from "components/InterviewerList"
+import useVisualMode from "hooks/useVisualMode"
 
 export default function Form(props){
   const [name, setName] = useState(props.name || "");
@@ -41,7 +42,7 @@ export default function Form(props){
       />
     </form>
     <InterviewerList 
-      interviewers={props.interviewers} 
+      interviewers={[]} 
       interviewer = {interviewer} 
       setInterviewer={setInterviewer}  
       />
