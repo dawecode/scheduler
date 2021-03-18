@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "components/Button"
-import useVisualMode from "hooks/useVisualMode"
 
 export default function Confirm (props) {
   return (

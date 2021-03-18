@@ -36,3 +36,10 @@ export function getInterview(state, interview) {
     "avatar": "https://i.imgur.com/LpaY82x.png"
   }
 }*/
+
+export function getInterviewersForDay(state, day) {
+  const currentDay = state.days.find(dayObj => dayObj.name === day);
+  const interviewersDay= currentDay ? currentDay.interviewers : []
+  const interviewers = interviewersDay.map(appointmentID => state.interviewers[appointmentID]);
+  return interviewers
+}

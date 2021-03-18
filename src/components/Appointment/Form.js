@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Button from "components/Button"
 import InterviewerList from "components/InterviewerList"
-import useVisualMode from "hooks/useVisualMode"
+
 
 export default function Form(props){
   const [name, setName] = useState(props.name || "");
@@ -35,14 +35,10 @@ export default function Form(props){
         placeholder="Enter Student Name"
         value= {name}
         onChange={(event) => setName(event.target.value)}
-        
-        /*
-          This must be a controlled component
-        */
       />
     </form>
     <InterviewerList 
-      interviewers={[]} 
+      interviewers={props.interviewers} 
       interviewer = {interviewer} 
       setInterviewer={setInterviewer}  
       />
