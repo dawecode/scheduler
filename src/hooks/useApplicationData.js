@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import {useState,useEffect} from "react";
 const axios = require('axios');
 
 
@@ -80,6 +80,6 @@ export default function useApplicationData() {
   
 
    return {
-     state, setDay, bookInterview ,cancelInterview,useEffect
+     state, setDay, bookInterview ,cancelInterview 
     }
 }
