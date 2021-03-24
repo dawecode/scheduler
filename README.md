@@ -3,9 +3,11 @@ Interview Scheduler is a single page application (SPA) built using REACT in the 
 
 ## Final product 
 
-
+##### When you want to book click on the "add"
 !["main page"](https://github.com/dawecode/scheduler/blob/master/docs/main.png)
+##### Add your information and choose your interviewer
 !["booking"](https://github.com/dawecode/scheduler/blob/master/docs/booking-form.png)
+##### This is what a booked appointment looks like !
 !["new booked interview"](https://github.com/dawecode/scheduler/blob/master/docs/interview-form.png)
 
 ## Dependencies 
