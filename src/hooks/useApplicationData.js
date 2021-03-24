@@ -24,28 +24,28 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-   
-    const newState = {...state,appointments}
+
+    const newState = { ...state, appointments }
     const updatedState = updateSpots(newState)
-     return axios.put(`/api/appointments/${id}`, {interview})
-    .then( res => setState(updatedState))
-    
+    return axios.put(`/api/appointments/${id}`, { interview })
+      .then(res => setState(updatedState))
+
   }
 
-  function cancelInterview(id){
+  function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
-      interview: null 
+      interview: null
     };
     const appointments = {
       ...state.appointments,
       [id]: appointment
     };
-   
-    const newState = {...state,appointments}
+
+    const newState = { ...state, appointments }
     const updatedState = updateSpots(newState)
     return axios.delete(`/api/appointments/${id}`)
-    .then(res => setState(updatedState))
+      .then(res => setState(updatedState))
   }
 
   useEffect(() => {
@@ -60,15 +60,15 @@ export default function useApplicationData() {
         interviewers: all[2].data
       }));
     })
-  },[])
+  }, [])
 
- 
+
 
   const updateSpots = (state) => {
     const currentDay = state.days.find(day => day.name === state.day)
     const apptIds = currentDay.appointments
     const accumulator = []
-    for(const apptId of apptIds) {
+    for (const apptId of apptIds) {
       accumulator.push(state.appointments[apptId])
     }
     const nullAppointments = accumulator.filter(appointment => appointment.interview === null)
@@ -76,10 +76,10 @@ export default function useApplicationData() {
     currentDay.spots = spots
     return state
   }
- 
-  
 
-   return {
-     state, setDay, bookInterview ,cancelInterview 
-    }
+
+
+  return {
+    state, setDay, bookInterview, cancelInterview
+  }
 }
